@@ -19,17 +19,20 @@ const contactSlice = createSlice({
   initialState,
   reducers: {
     addContact: (state, action: PayloadAction<Contact>) => {
-      state.contacts.push(action.payload);
+      state.contacts.push(action.payload); 
     },
     editContact: (
       state,
       action: PayloadAction<{ index: number; updatedContact: Contact }>
     ) => {
       const { index, updatedContact } = action.payload;
-      state.contacts[index] = updatedContact;
+
+      if (state.contacts[index]) {
+        state.contacts[index] = { ...state.contacts[index], ...updatedContact }; 
+      }
     },
     removeContact: (state, action: PayloadAction<number>) => {
-      state.contacts.splice(action.payload, 1);
+      state.contacts = state.contacts.filter((_, i) => i !== action.payload); 
     },
   },
 });

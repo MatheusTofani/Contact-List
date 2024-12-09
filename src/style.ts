@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family : 'Quicksand', sans-serif;
+     overflow-x: hidden;
     }
 
     body {
@@ -16,4 +17,8 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   width: 1440px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+     width: 100%;
+    }
 `

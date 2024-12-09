@@ -7,44 +7,83 @@ export const CardContainer = styled.div`
   margin: 8px 0;
   background-color: #f9f9f9;
   display: flex;
-  height: 200px
-`;
+  height: 200px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
+`;
 
 export const CardTitle = styled.p`
   font-size: 22px;
-  display: flex; 
+  display: flex;
   align-items: center;
-`;
 
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
 
 export const TagColor = styled.span`
   color: #394193;
-  font-size: 40px; 
-  display: flex; 
-  align-items: center; 
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 export const InfoContainer = styled.div`
   display: flex;
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 `;
 
-
 export const ButtonsContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 50%;
-align-items: end;
-justify-content: space-between;
-`
-  ;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: end;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 30%;
+    align-items: end;
+  }
+`;
 
 export const ContentsContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 50%;
-justify-content: space-between;
-`
-  ;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+`;
+
+export const IconDelete = styled.div`
+  color: #a11719;
+  font-size: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #8f1416;
+  }
+`;
+
+export const IconEdit = styled.div`
+  color: #21fa90;
+  font-size: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #0ffa89;
+  }
+`;

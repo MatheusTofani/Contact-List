@@ -21,6 +21,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
       &:hover {
         background-color: #D6EFFF;
       }
+
+      @media (max-width: 768px) {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
     `}
 
   ${({ variant }) =>

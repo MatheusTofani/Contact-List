@@ -5,9 +5,10 @@ import { ContactContainer, EmptyMessage } from "./style";
 import { Container } from "../../style";
 
 const ContactList = () => {
-    const contacts = useSelector((state: RootState) => state.contact.contacts);
-    const searchTerm = useSelector((state: RootState) => state.search.searchTerm);
+    const contacts = useSelector((state: RootState) => state.contact.contacts); 
+    const searchTerm = useSelector((state: RootState) => state.search.searchTerm); 
 
+   
     const filteredContacts = contacts.filter(
         (contact) =>
             contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -25,17 +26,16 @@ const ContactList = () => {
                             : "Nenhum contato encontrado"}
                     </EmptyMessage>
                 ) : (
-                    <ContactContainer>
-                        {filteredContacts.map((contact, index) => (
+                    filteredContacts.map((contact, index) => (
+                        <ContactContainer key={index}>
                             <Card
-                                key={index}
                                 index={index}
                                 name={contact.name}
                                 email={contact.email}
                                 phone={contact.phone}
                             />
-                        ))}
-                    </ContactContainer>
+                        </ContactContainer>
+                    ))
                 )}
             </Container>
         </div>

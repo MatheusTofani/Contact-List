@@ -8,6 +8,11 @@ padding-left: 20px;
 border: none;
 background-color: #EBF7FF;
 transition: all 0.3s ease;
+margin-right: 20px;
+
+@media (max-width: 768px) {
+        display: none;
+    }
  
 &:hover{
     background-color: #D6EFFF;
